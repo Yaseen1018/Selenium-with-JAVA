@@ -11,16 +11,9 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="loginDDT"/>
+          <include name="loginDDT" invocation-numbers="1 2 3 4"/>
         </methods>
       </class> <!-- com.inetBanking.testCases.TC002_Login_DDT -->
-      <class name="com.inetBanking.testCases.TC003_AddCustomer">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="addCustomer"/>
-        </methods>
-      </class> <!-- com.inetBanking.testCases.TC003_AddCustomer -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

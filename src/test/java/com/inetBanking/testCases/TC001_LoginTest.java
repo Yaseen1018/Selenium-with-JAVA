@@ -3,7 +3,6 @@ package com.inetBanking.testCases;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,7 +12,7 @@ public class TC001_LoginTest extends BaseClass{
 	
 	@Test
 	public void loginTest() throws IOException {
-		driver.get(baseURL);
+		//driver.get(baseURL);
 		
 		logger.info("Url is opened");
 

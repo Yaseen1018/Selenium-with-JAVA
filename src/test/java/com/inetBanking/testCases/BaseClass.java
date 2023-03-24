@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
@@ -31,7 +32,7 @@ public class BaseClass {
 	public static Logger logger;
 	
 	@Parameters("browser")
-	@BeforeClass
+	@BeforeClass 
 	public void setUp(String browser) {
 		
 		
@@ -41,7 +42,12 @@ public class BaseClass {
 		if(browser.equals("chrome"))
 		{
 		System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
-		driver = new ChromeDriver();
+		
+		ChromeOptions chromeOptions = new ChromeOptions();
+
+		chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
+
+		driver = new ChromeDriver(chromeOptions);
 		}
 		else if(browser.equals("Edge"))
 		{
